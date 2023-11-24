@@ -36,8 +36,8 @@ app.use(shopRoutes);
 app.use(errorController.get404);
 
 Product.belongsTo(User, {constraints: true, onDelete: 'CASCADE'});
+User.hasMany(Product);   // adds create product method to user
 
-//User.hasMany(Product);
 //.sync creates a table for us by looking our models file and if it exists it instantiates them based.
 
 // Syncing the models with the database
